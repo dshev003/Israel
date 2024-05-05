@@ -1,5 +1,5 @@
-# Israel
-The Members of the Knesset (MK) database, houses biographical information in spreadsheet format of nearly 1200 individuals who served in the Israeli Knesset from 1949 to 1977. Includes geospatial data for European regions from 1900 and 1930.
+# Israel MK Attributes
+The Members of the Knesset (MK) dataset, organizes biographical information in spreadsheet format of nearly 1200 individuals who served in the Israeli Knesset from 1949 to 1977. Includes geospatial data for European regions from 1900 and 1930.
 
 Israel is composed of a vast array of Jewish groups from across the world, considering its foremost state policy is to encourage Jewish immigration (Aliyah). Aside from the native Druze, Bedouin and Arab citizens of Israel, its Jewish inhabitants are almost entirely immigrants or descendents of immigrants who arrived in Ottoman Palestine, Mandatory Palestine and Israel after the 1880s. This database aims to catalog the origins of members of the Israeli Knesset, which is the preeminent lawmaking body of the State of Israel. The aims are sixfold:
 
