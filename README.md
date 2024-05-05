@@ -8,6 +8,6 @@ Israel is composed of a vast array of Jewish groups from across the world, consi
 3) To analyze how the age and gender of MKs relate to ethnic and regional background over time.
 4) To pinpoint ideological variations in MKs born in Israel/Mandatory Palestine and those of foreign birth who immigrated to Israel over time. 
 5) To view patterns of the “Hebraization” of Israeli political leaders over time.
-6) 6) To link ethnic and regional attributes to geospatial data for public viewing.
+6) To link ethnic and regional attributes to geospatial data for public viewing.
 
 
