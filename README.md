@@ -100,7 +100,7 @@ ggplot(df, aes(x = Birth.Country..Present., fill = Party)) +
   geom_bar(width = 0.5) + 
   theme_minimal() + 
   labs(x = "Birth Country of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
-  theme(axis.text.x = element_text(angle = -90), text = element_text(size = 10)) +  
+  theme(axis.text.x = element_text(angle = -90), text = element_text(size = 11)) +  
   scale_fill_manual(values = c("#AF0000", "#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#172d81", "#cd1b68", "#89C5C6"))
 ```
 
