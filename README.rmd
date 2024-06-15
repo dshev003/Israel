@@ -1,6 +1,6 @@
 ---
 title: "Israel MK Analysis"
-output: html_document
+output: github_document
 
 ---
 
