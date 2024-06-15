@@ -5,7 +5,12 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
 ```
 
 The Members of the Knesset (MK) database, houses biographical information in spreadsheet format of nearly 1200 individuals who served in the Israeli Knesset from 1949 to 1977.
@@ -26,16 +31,31 @@ Israel is composed of a vast array of Jewish groups from across the world, consi
 
 
 
-```{r cars}
-summary(cars)
+```{r}
+library(tidyverse)
+library(kableExtra)
+library(psych)
+
+df = read.csv("1949-1951.csv")
+kable(head(df))
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+ggplot(df, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) + 
+  geom_point() +  
+  geom_smooth(method=lm, se=FALSE) + labs(x = "Birth Year", y = "Date of Immigration", color = "Hebraized Name")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+
+ggplot(df, aes(x = Birth.Country..Present., fill = Party)) + 
+  geom_bar(width = 0.5) + 
+  theme_minimal() + 
+  labs(x = "Birth Country of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
+  theme(axis.text.x = element_text(angle = -90), text = element_text(size = 7)) +  
+  scale_fill_manual(values = c("#AF0000", "#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#172d81", "#cd1b68", "#89C5C6"))
+
+```

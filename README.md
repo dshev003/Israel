@@ -36,22 +36,39 @@ Israel. The aims are sixfold:
     viewing.
 
 ``` r
-summary(cars)
+library(tidyverse)
+library(kableExtra)
+library(psych)
+
+df = read.csv("1949-1951.csv")
+kable(head(df))
 ```
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+| Knesset   | Party | Name              | Gender | Age | Birth.Year | Birth.Name          | Hebraized.Name. | Birthplace | Type.of.Birth.Locality | Birth.Region               | Birth.Country  | Birth.Country..Present. | Date.of.Immigration | Community | Notes |
+|:----------|:------|:------------------|:-------|----:|-----------:|:--------------------|:----------------|:-----------|:-----------------------|:---------------------------|:---------------|:------------------------|:--------------------|:----------|:------|
+| 1949-1951 | Mapai | Meir Argov        | Male   |  43 |       1905 | Meyer Grabovsky     | 1               | Rîbnița    | Town                   | Podolsk Governorate        | Russian Empire | Moldova                 | 1927                | Ashkenazi |       |
+| 1949-1951 | Mapai | Ami Assaf         | Male   |  45 |       1903 | Ami Vilkomitz       | 1               | Rosh Pinna | Rural Community        | Beirut Vilayet             | Ottoman Empire | Israel                  | \-                  | Ashkenazi |       |
+| 1949-1951 | Mapai | Zalman Aran       | Male   |  49 |       1899 | Zalman Aharonowitz  | 1               | Yuzovka    | City                   | Yekaterinoslav Governorate | Russian Empire | Ukraine                 | 1926                | Ashkenazi |       |
+| 1949-1951 | Mapai | Yitzhak Ben-Zvi   | Male   |  64 |       1884 | Izaak Shimshelevich | 1               | Poltava    | City                   | Poltava Governorate        | Russian Empire | Russia                  | 1907                | Ashkenazi |       |
+| 1949-1951 | Mapai | Aryeh Bahir       | Male   |  42 |       1906 | Aryeh Geller        | 1               | Odessa     | City                   | Kherson Governorate        | Russian Empire | Ukraine                 | 1924                | Ashkenazi |       |
+| 1949-1951 | Mapai | David Bar-Rav-Hai | Male   |  54 |       1894 | David Borovoi       | 1               | Nizhyn     | Town                   | Chernigov Governorate      | Russian Empire | Ukraine                 | 1924                | Ashkenazi |       |
 
-## Including Plots
+``` r
+ggplot(df, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) + 
+  geom_point() +  
+  geom_smooth(method=lm, se=FALSE) + labs(x = "Birth Year", y = "Date of Immigration", color = "Hebraized Name")
+```
 
-You can also embed plots, for example:
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
+``` r
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+ggplot(df, aes(x = Birth.Country..Present., fill = Party)) + 
+  geom_bar(width = 0.5) + 
+  theme_minimal() + 
+  labs(x = "Birth Country of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
+  theme(axis.text.x = element_text(angle = -90), text = element_text(size = 7)) +  
+  scale_fill_manual(values = c("#AF0000", "#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#172d81", "#cd1b68", "#89C5C6"))
+```
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
