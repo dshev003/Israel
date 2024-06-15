@@ -35,7 +35,7 @@ Israel. The aims are sixfold:
 6)  To link ethnic and regional attributes to geospatial data for public
     viewing.
 
-## A Peak at the Dataset
+## A Peek at the Dataset
 
 Here is a sample of the individuals elected to the First Knesset between
 1949 and 1951. This data was compiled from biographical information
@@ -85,6 +85,16 @@ ggplot(df, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
+``` r
+
+df2 = read.csv("1955-1959.csv")
+ggplot(df2, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) +
+  geom_point() +  
+  geom_smooth(method=lm, se=FALSE) + labs(x = "Birth Year", y = "Date of Immigration", color = "Hebraized Name")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 Here is a barplot that shows the distribution of MKs who sat in the
 Knesset between 1949 and 1951 by country of birth and political party.
 We can see that most of the MKs born in former Russian/Soviet states
@@ -104,4 +114,6 @@ ggplot(df, aes(x = Birth.Country..Present., fill = Party)) +
   scale_fill_manual(values = c("#AF0000", "#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#172d81", "#cd1b68", "#89C5C6"))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+\`\`\`

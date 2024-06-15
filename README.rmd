@@ -29,7 +29,7 @@ Israel is composed of a vast array of Jewish groups from across the world, consi
 
 6) To link ethnic and regional attributes to geospatial data for public viewing.
 
-## A Peak at the Dataset
+## A Peek at the Dataset
 
 Here is a sample of the individuals elected to the First Knesset between 1949 and 1951. This data was compiled from biographical information about the various MKs that can be fetched from the Knesset website along with other supplemental sources. There are a total of fifteen attributes for which I collected data.
 
@@ -52,6 +52,15 @@ ggplot(df, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) +
   geom_smooth(method=lm, se=FALSE) + labs(x = "Birth Year", y = "Date of Immigration", color = "Hebraized Name")
 ```
 
+```{r}
+
+df2 = read.csv("1955-1959.csv")
+ggplot(df2, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) +
+  geom_point() +  
+  geom_smooth(method=lm, se=FALSE) + labs(x = "Birth Year", y = "Date of Immigration", color = "Hebraized Name")
+```
+
+
 Here is a barplot that shows the distribution of MKs who sat in the Knesset between 1949 and 1951 by country of birth and political party. We can see that most of the MKs born in former Russian/Soviet states (Ukraine, Moldova, Belarus) overwhelmingly affiliated with leftist parties. Those born in Poland and Israel (then Mandatory Palestine), were more evenly divided between leftist and conservative parties. A notable number of Israeli MKs of German Jewish origin affiliated with the more liberal/centrist Progressive Party.
 
 ```{r}
@@ -62,5 +71,7 @@ ggplot(df, aes(x = Birth.Country..Present., fill = Party)) +
   labs(x = "Birth Country of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
   theme(axis.text.x = element_text(angle = -90), text = element_text(size = 11)) +  
   scale_fill_manual(values = c("#AF0000", "#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#172d81", "#cd1b68", "#89C5C6"))
+
+```
 
 ```
