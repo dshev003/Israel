@@ -1,35 +1,19 @@
-# Israel MK Attributes
-The Members of the Knesset (MK) dataset, organizes biographical information in spreadsheet format of nearly 1200 individuals who served in the Israeli Knesset from 1949 to 1977. Includes geospatial data for European regions from 1900 and 1930.
 
-Israel is composed of a vast array of Jewish groups from across the world, considering its foremost state policy is to encourage Jewish immigration (Aliyah). Aside from the native Druze, Bedouin and Arab citizens of Israel, its Jewish inhabitants are almost entirely immigrants or descendents of immigrants who arrived in Ottoman Palestine, Mandatory Palestine and Israel after the 1880s. This project aims to catalog the origins of members of the Israeli Knesset, which is the preeminent lawmaking body of the State of Israel.
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-Aims
+# Nepal-Conflict-and-Elections
 
-1) To compare patterns of Jewish immigration to the ethnic and regional composition of the Knesset over time.
-2) To examine how regional background, broad ethnic division, gender, age and type of birth locality tie to party membership in the Knesset over time.
-3) To analyze how the age and gender of MKs relate to ethnic and regional background over time.
-4) To pinpoint ideological variations in MKs born in Israel/Mandatory Palestine and those of foreign birth who immigrated to Israel over time. 
-5) To view patterns of the “Hebraization” of Israeli political leaders over time.
-6) To link ethnic and regional attributes to geospatial data for public viewing.
+<!-- badges: start -->
+<!-- badges: end -->
 
-Viewable Attributes
+## Introduction
 
-1) Party
-2) Name
-3) Gender
-4) Age at Election
-5) Birth Year
-6) Birth Name
-7) Hebraization of Name
-8) Birthplace
-9) Type of Birth Locality
-10) Birth Region
-11) Birth Country
-12) Birth Country (Present)
-13) Year of Aliyah
-14) Ethnoreligious Division
-
-
-
-
-
+Nepal is one of only a few countries in the world that successfully
+integrated a rebel group into its political system, a process that has
+yielded relatively peaceful results to the present day. From 1996 to
+2006, the Nepalese people faced the tragedy of a [civil
+war](https://en.wikipedia.org/wiki/Nepalese_Civil_War) that destroyed
+lives, communities and families alike. For the personal stories of those
+affected, the [INSEC](https://www.insec.org.np/victim) database
+comprehensively catalogues details on the thousands of dead, wounded and
+missing of the conflict.

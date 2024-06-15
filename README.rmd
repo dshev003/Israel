@@ -1,26 +1,29 @@
 ---
-output: github_document
+title: "README.rmd"
+output: html_document
+date: "2024-06-15"
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  warning = FALSE,
-  message = FALSE
-)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Nepal-Conflict-and-Elections
+## R Markdown
 
-<!-- badges: start -->
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-<!-- badges: end -->
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+```{r cars}
+summary(cars)
+```
 
-## Introduction
+## Including Plots
 
-Nepal is one of only a few countries in the world that successfully integrated a rebel group into its political system, a process that has yielded relatively peaceful results to the present day. From 1996 to 2006, the Nepalese people faced the tragedy of a [civil war](https://en.wikipedia.org/wiki/Nepalese_Civil_War) that destroyed lives, communities and families alike. For the personal stories of those affected, the [INSEC](https://www.insec.org.np/victim) database comprehensively catalogues details on the thousands of dead, wounded and missing of the conflict.
+You can also embed plots, for example:
 
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
