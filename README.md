@@ -35,6 +35,14 @@ Israel. The aims are sixfold:
 6)  To link ethnic and regional attributes to geospatial data for public
     viewing.
 
+## A Peak at the Dataset
+
+Here is a sample of the individuals elected to the First Knesset between
+1949 and 1951. This data was compiled from biographical information
+about the various MKs that can be fetched from the Knesset website along
+with other supplemental sources. There are a total of fifteen attributes
+for which I collected data.
+
 ``` r
 library(tidyverse)
 library(kableExtra)
@@ -53,6 +61,22 @@ kable(head(df))
 | 1949-1951 | Mapai | Aryeh Bahir       | Male   |  42 |       1906 | Aryeh Geller        | 1               | Odessa     | City                   | Kherson Governorate        | Russian Empire | Ukraine                 | 1924                | Ashkenazi |       |
 | 1949-1951 | Mapai | David Bar-Rav-Hai | Male   |  54 |       1894 | David Borovoi       | 1               | Nizhyn     | Town                   | Chernigov Governorate      | Russian Empire | Ukraine                 | 1924                | Ashkenazi |       |
 
+## Plots
+
+Barplots and charts are an important visual aid to gain a better general
+understanding of the data that was collected. Here is a prudent example.
+Between the 1880s and Israel’s independence, immigration took place in
+several stages. We can observe that the cohort of future MKs who arrived
+in Ottoman Palestine in 1913 was much older than the future MKs who
+arrived just a year later. On average, it appears that the future MKs
+who arrived earlier were more likely to have changed their names in line
+with Hebrew conventions than those who arrived later. However, there are
+exceptions. The cohort that made aliyah in 1940 had Hebraized names in
+contrast to those that arrived in 1938 and 1939. On the flipside, those
+individuals who arrived in 1923 did not change their names, even though
+most of the arrivals between 1921 and 1932 did change them. However, it
+must be underscored that the sample size is only 130.
+
 ``` r
 ggplot(df, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) + 
   geom_point() +  
@@ -60,6 +84,15 @@ ggplot(df, aes(Birth.Year, Date.of.Immigration, colour = Hebraized.Name.)) +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+Here is a barplot that shows the distribution of MKs who sat in the
+Knesset between 1949 and 1951 by country of birth and political party.
+We can see that most of the MKs born in former Russian/Soviet states
+(Ukraine, Moldova, Belarus) overwhelmingly affiliated with leftist
+parties. Those born in Poland and Israel (then Mandatory Palestine),
+were more evenly divided between leftist and conservative parties. A
+notable number of Israeli MKs of German Jewish origin affiliated with
+the more liberal/centrist Progressive Party.
 
 ``` r
 
