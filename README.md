@@ -143,6 +143,23 @@ ggplot(df_filtered, aes(x = Birth.Region, fill = Party)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
+``` r
+
+df_filtered <- df %>%
+  filter(Birth.Country %in% c("Russian Empire", "Congress Poland"))
+
+ggplot(df_filtered, aes(x = Birth.Region, fill = Hebraized.Name.)) + 
+  geom_bar(width = 0.5) + 
+  theme_minimal() + 
+  labs(x = "Birth Region of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), text = element_text(size = 7), 
+        plot.margin = unit(c(1, 1, 1, 1), "lines")) +  
+  scale_fill_manual(values = c("red","#0038B8", "grey")) + 
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10), expand = expansion(mult = c(0, 0.05)))
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
 ## Maps
 
 Here is a map that shows the 27 governorates of the Pale of Settlement
@@ -170,7 +187,7 @@ par(mar = c(0, 0, 0, 0))
 plot(geojson_data["MKs"])
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 library(sf)
@@ -223,4 +240,4 @@ combined_plot <- wrap_plots(plots, ncol = 2) +
 print(combined_plot)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
