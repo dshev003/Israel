@@ -143,6 +143,14 @@ ggplot(df_filtered, aes(x = Birth.Region, fill = Party)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
+This plot shows a breakdown of the number of winning MKs born in the
+various provinces of Russian-ruled Poland and the Russian Empire proper
+by the metric of “Hebraization.” Hebraization refers to intentional
+changes in a person’s name (typically their surname) to be more in line
+with Hebrew naming conventions. Individuals often did this for the sake
+of assimilation or disassociation from family names that bore a large
+degree of emotional weight due to the trauma of the Holocaust.
+
 ``` r
 
 df_filtered <- df %>%
