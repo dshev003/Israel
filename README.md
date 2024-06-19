@@ -134,7 +134,7 @@ df_filtered <- df %>%
 ggplot(df_filtered, aes(x = Birth.Region, fill = Party)) + 
   geom_bar(width = 0.5) + 
   theme_minimal() + 
-  labs(x = "Birth Country of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
+  labs(x = "Birth Region of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1), text = element_text(size = 7), 
         plot.margin = unit(c(1, 1, 1, 1), "lines")) +  
   scale_fill_manual(values = c("#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#cd1b68")) + 
