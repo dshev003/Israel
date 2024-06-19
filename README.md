@@ -176,10 +176,10 @@ geojson_data <- st_read("pale.geojson")
 
 # Define color palettes
 map_colors <- list(
-  "Mapai" = c("#E59999", "#D26666", "#BF3333", "#AD0101", "#8A0000", "#680000", "#450000"),
-  "Mapam" = c("#FF6666", "#FF0000", "#990000"),
-  "Herut" = c("#3399CC", "#0077B9", "#005A8A"),
-  "United.Religious.Front" = c("#336FBF", "#0047AB", "#003080")
+  "Mapai" = c("grey", "#D26666", "#BF3333", "#AD0101", "#8A0000", "#680000", "#450000"),
+  "Mapam" = c("grey", "#FF0000", "#990000"),
+  "Herut" = c("grey", "#0077B9", "#005A8A"),
+  "United.Religious.Front" = c("grey", "#0047AB", "#003080")
 )
 
 # Create ggplot objects for each geographic entity
