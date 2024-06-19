@@ -116,6 +116,16 @@ ggplot(df, aes(x = Birth.Country..Present., fill = Party)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
+It is clear that a large majority of the members of the First Knesset
+were born in modern-day Ukraine, Belarus, Poland and Moldova. All of
+these countries were once part of the Russian Empire in a region known
+as the Pale of Settlement. In 1791, Empress Catherine of Russia issued a
+decree that limited most permanent and temporary Jewish settlement to
+these territories. As a consequence, the bulk of the Jewish population
+of the Russian Empire, and Europe originated from here. Let’s make a bar
+chart that allows us to see the distribution of party strength by
+governorate (province) in the Russian Empire and Congress Poland.
+
 ``` r
 
 df_filtered <- df %>%
@@ -132,6 +142,10 @@ ggplot(df_filtered, aes(x = Birth.Region, fill = Party)) +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+## Maps
+
+Here is a map that shows the 27 governorates of the Pale of Settlement
 
 ``` r
 
