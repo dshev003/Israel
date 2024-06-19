@@ -74,4 +74,79 @@ ggplot(df, aes(x = Birth.Country..Present., fill = Party)) +
 
 ```
 
+
+
+```{r}
+
+df_filtered <- df %>%
+  filter(Birth.Country %in% c("Russian Empire", "Congress Poland"))
+
+ggplot(df_filtered, aes(x = Birth.Region, fill = Party)) + 
+  geom_bar(width = 0.5) + 
+  theme_minimal() + 
+  labs(x = "Birth Country of Winning Candidates", y = "Number of Winning Candidates", fill = "Party") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), text = element_text(size = 7), 
+        plot.margin = unit(c(1, 1, 1, 1), "lines")) +  
+  scale_fill_manual(values = c("#0038B8", "#00ADCC", "#0077B9", "#FF524D", "#AD0101", "#FF0000", "#FFC800", "#0047AB", "#cd1b68")) + 
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 10), expand = expansion(mult = c(0, 0.05)))
+```
+
+```{r}
+
+library(sf)
+library(ggplot2)
+
+
+geojson_data <- st_read("pale.geojson")
+
+par(mar = c(0, 0, 0, 0))  
+
+
+#plot(geojson_data["MKs"])
+plot(geojson_data["MKs"])
+
+```
+
+```{r}
+library(sf)
+library(ggplot2)
+library(patchwork)
+
+# Read GeoJSON data
+geojson_data <- st_read("pale.geojson")
+
+# Define color palettes
+map_colors <- list(
+  "Mapai" = c("#E59999", "#D26666", "#BF3333", "#AD0101", "#8A0000", "#680000", "#450000"),
+  "Mapam" = c("#FF6666", "#FF0000", "#990000"),
+  "Herut" = c("#3399CC", "#0077B9", "#005A8A"),
+  "United.Religious.Front" = c("#336FBF", "#0047AB", "#003080")
+)
+
+# Create ggplot objects for each geographic entity
+plots <- lapply(names(map_colors), function(entity) {
+  ggplot(geojson_data) +
+    geom_sf(aes(fill = factor(.data[[entity]]))) +
+    scale_fill_manual(values = map_colors[[entity]], name = "MKs") +
+    
+    labs(title = gsub("\\."," ", entity)) +
+    theme_minimal() +
+    theme(panel.grid = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          axis.title = element_blank(),
+          legend.position = "bottom",
+          legend.box = "horizontal",  # Adjust legend orientation
+          legend.key.size = unit(0.25, "cm")) +  # Adjust legend size
+    guides(fill = guide_legend(nrow = 1)) +
+    theme(plot.margin = margin(0, 0, 0, 0))  # Adjust plot margins
+})
+
+# Combine the plots using patchwork
+combined_plot <- wrap_plots(plots, ncol = 2) + 
+  plot_layout(widths = c(5, 5), heights = c(5, 5))  # Double the width and height of each plot
+
+# Display the combined plot
+print(combined_plot)
+
 ```
